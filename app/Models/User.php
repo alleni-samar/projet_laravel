@@ -27,6 +27,23 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the reservations for the user.
+     */
+    public function reservations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
+    /**
+     * Get the chat messages for the user.
+     */
+    public function chatMessages(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ChatMessage::class);
+    }
+
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
