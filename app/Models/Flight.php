@@ -44,4 +44,8 @@ class Flight extends Model
             'total_seats' => 'integer',
         ];
     }
+    public function scopeFuture($query)
+{
+    return $query->where('departure_time', '>', now());
+}
 }

@@ -42,6 +42,8 @@ class DashboardController extends Controller
      */
     public function statsAdmin(Request $request)
     {
+        Carbon::setLocale('fr');
+
         // 1. Total flights
         $totalFlights = Flight::count();
 
