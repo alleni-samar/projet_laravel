@@ -1,70 +1,233 @@
-# Getting Started with Create React App
+# Projet Réservation de Vols - Frontend React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Ce projet représente l'interface utilisateur (Frontend) de l'application de réservation de vols. Il a été développé avec React.js et permet aux utilisateurs de consulter les vols disponibles, effectuer des réservations, gérer leur compte et interagir avec l'API Laravel.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# Technologies utilisées
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* React.js
+* React Router DOM
+* Axios
+* Bootstrap / CSS
+* JavaScript ES6+
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# Prérequis
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Avant d'installer le projet, assurez-vous d'avoir :
 
-### `npm run build`
+* Node.js (version 18 ou supérieure recommandée)
+* npm ou yarn
+* Git
+* Backend Laravel fonctionnel
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Vérifier les versions :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+node -v
+npm -v
+git --version
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+# Cloner le projet
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/votre-compte/reservation-vols-frontend.git
+cd reservation-vols-frontend
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Installation des dépendances
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Installer toutes les dépendances du projet :
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ou
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn install
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Configuration de l'environnement
 
-### Analyzing the Bundle Size
+Créer un fichier `.env` à la racine du projet :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```env
+REACT_APP_API_URL=http://127.0.0.1:8000/api
+```
 
-### Making a Progressive Web App
+Exemple :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```env
+REACT_APP_API_URL=http://localhost:8000/api
+```
 
-### Advanced Configuration
+Cette variable permet de communiquer avec le backend Laravel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+# Structure du projet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+src/
+│
+├── components/
+│
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── FlightForm.jsx
+│   ├── ReservationsList.jsx
+│   └── ...
+│
+├── services/
+│   └── api.js
+│
+├── context/
+│
+├── assets/
+│
+├── App.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+
+---
+
+# Lancement du projet
+
+Démarrer le serveur de développement :
+
+```bash
+npm start
+```
+
+ou
+
+```bash
+yarn start
+```
+
+L'application sera accessible à :
+
+```text
+http://localhost:3000
+```
+
+Le navigateur s'ouvrira automatiquement.
+
+---
+
+
+# Gestion des dépendances
+
+Installer une nouvelle dépendance :
+
+```bash
+npm install nom-package
+```
+
+Exemple :
+
+```bash
+npm install axios
+npm install react-router-dom
+npm install bootstrap
+```
+
+---
+
+# Scripts disponibles
+
+### Démarrer le projet
+
+```bash
+npm start
+```
+
+# Connexion avec le Backend Laravel
+
+Assurez-vous que le backend Laravel est démarré :
+
+```bash
+php artisan serve
+```
+
+Par défaut :
+
+```text
+http://127.0.0.1:8000
+```
+
+Configuration Axios :
+
+```javascript
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+});
+
+export default api;
+```
+
+---
+
+# Fonctionnalités du projet
+
+* Authentification utilisateur
+* Inscription utilisateur
+* Connexion utilisateur
+* Consultation des vols
+* Recherche de vols
+* Réservation de vols
+* Gestion des réservations
+* Tableau de bord administrateur
+* Gestion des vols
+
+---
+
+# Résolution des problèmes
+
+### Supprimer node_modules
+
+```bash
+rm -rf node_modules
+npm install
+```
+
+Sous Windows :
+
+```cmd
+rmdir /s /q node_modules
+npm install
+```
+
+### Nettoyer le cache npm
+
+```bash
+npm cache clean --force
+```
+
+
+
+# Auteur
+
+Projet réalisé dans le cadre du développement d'une application de réservation de vols utilisant :
+
+* Laravel (Backend)
+* React.js (Frontend)
+* MySQL (Base de données)
+
+---
+
