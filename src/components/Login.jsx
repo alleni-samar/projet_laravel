@@ -39,9 +39,12 @@ function Login() {
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className="animated">
       <div style={styles.card}>
-        <h2 style={styles.title}>Connexion</h2>
+        <h2 style={styles.title}>
+          <span style={{ color: 'var(--primary-color)' }}>Fly</span>High
+        </h2>
+        <h3 style={styles.subtitle}>Connexion</h3>
         {error && <div style={styles.error}>{error}</div>}
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.formGroup}>
@@ -51,7 +54,8 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={styles.input}
+              className="form-input"
+              placeholder="votre@email.com"
             />
           </div>
           <div style={styles.formGroup}>
@@ -61,10 +65,11 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              style={styles.input}
+              className="form-input"
+              placeholder="••••••••"
             />
           </div>
-          <button type="submit" disabled={loading} style={styles.button}>
+          <button type="submit" disabled={loading} className="submit-btn glow-btn" style={{ marginTop: '10px' }}>
             {loading ? 'Connexion en cours...' : 'Se connecter'}
           </button>
         </form>
@@ -82,68 +87,74 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#f3f4f6',
+    width: '100vw',
   },
   card: {
-    width: '400px',
-    padding: '30px',
-    backgroundColor: '#ffffff',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    width: '420px',
+    padding: '40px',
+    backgroundColor: 'rgba(18, 24, 51, 0.65)',
+    backdropFilter: 'blur(16px)',
+    border: '1px solid var(--border-color)',
+    borderRadius: 'var(--border-radius-md)',
+    boxShadow: 'var(--shadow-lg)',
+    display: 'flex',
+    flexDirection: 'column',
   },
   title: {
-    margin: '0 0 20px 0',
-    color: '#1f2937',
+    margin: '0 0 5px 0',
+    color: 'var(--text-primary)',
     textAlign: 'center',
+    fontWeight: '800',
+    fontSize: '32px',
+    letterSpacing: '-1px',
+  },
+  subtitle: {
+    margin: '0 0 30px 0',
+    color: 'var(--text-secondary)',
+    textAlign: 'center',
+    fontWeight: '500',
+    fontSize: '16px',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '15px',
+    gap: '20px',
   },
   formGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '5px',
+    gap: '6px',
   },
   label: {
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#4b5563',
-  },
-  input: {
-    padding: '10px',
-    borderRadius: '4px',
-    border: '1px solid #d1d5db',
-    fontSize: '16px',
-  },
-  button: {
-    padding: '12px',
-    borderRadius: '4px',
-    border: 'none',
-    backgroundColor: '#3b82f6',
-    color: '#ffffff',
-    fontSize: '16px',
-    fontWeight: 'bold',
-    cursor: 'pointer',
+    fontSize: '12px',
+    fontWeight: '700',
+    color: 'var(--text-secondary)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.7px',
   },
   error: {
-    padding: '10px',
-    backgroundColor: '#fee2e2',
-    color: '#ef4444',
-    borderRadius: '4px',
-    marginBottom: '15px',
+    padding: '12px 16px',
+    backgroundColor: 'var(--danger-bg)',
+    border: '1px solid var(--danger-border)',
+    color: 'var(--danger-color)',
+    borderRadius: 'var(--border-radius-sm)',
+    marginBottom: '20px',
     fontSize: '14px',
+    fontWeight: '500',
   },
   footerText: {
-    marginTop: '15px',
+    marginTop: '25px',
     textAlign: 'center',
     fontSize: '14px',
-    color: '#6b7280',
+    color: 'var(--text-muted)',
   },
   link: {
-    color: '#3b82f6',
+    color: 'var(--primary-color)',
     textDecoration: 'none',
+    fontWeight: '600',
+    transition: 'color var(--transition-fast)',
   }
 };
 

@@ -51,9 +51,12 @@ function Register() {
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} className="animated">
       <div style={styles.card}>
-        <h2 style={styles.title}>Inscription</h2>
+        <h2 style={styles.title}>
+          <span style={{ color: 'var(--accent-color)' }}>Fly</span>High
+        </h2>
+        <h3 style={styles.subtitle}>Inscription</h3>
         {error && <div style={styles.error}>{error}</div>}
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.formGroup}>
@@ -63,7 +66,8 @@ function Register() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              style={styles.input}
+              className="form-input form-input-accent"
+              placeholder="Jean Dupont"
             />
           </div>
           <div style={styles.formGroup}>
@@ -73,14 +77,20 @@ function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={styles.input}
+              className="form-input form-input-accent"
+              placeholder="jean.dupont@email.com"
             />
           </div>
           <div style={styles.formGroup}>
             <label style={styles.label}>Rôle</label>
-            <select value={role} onChange={(e) => setRole(e.target.value)} style={styles.input}>
-              <option value="user">Utilisateur (Simple)</option>
-              <option value="admin">Administrateur</option>
+            <select 
+              value={role} 
+              onChange={(e) => setRole(e.target.value)} 
+              className="form-input form-input-accent"
+              style={{ cursor: 'pointer' }}
+            >
+              <option value="user" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>Utilisateur (Simple)</option>
+              <option value="admin" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>Administrateur</option>
             </select>
           </div>
           <div style={styles.formGroup}>
@@ -90,7 +100,8 @@ function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              style={styles.input}
+              className="form-input form-input-accent"
+              placeholder="••••••••"
             />
           </div>
           <div style={styles.formGroup}>
@@ -100,10 +111,11 @@ function Register() {
               value={passwordConfirmation}
               onChange={(e) => setPasswordConfirmation(e.target.value)}
               required
-              style={styles.input}
+              className="form-input form-input-accent"
+              placeholder="••••••••"
             />
           </div>
-          <button type="submit" disabled={loading} style={styles.button}>
+          <button type="submit" disabled={loading} className="submit-btn-accent glow-btn" style={{ marginTop: '10px' }}>
             {loading ? 'Inscription en cours...' : "S'inscrire"}
           </button>
         </form>
@@ -120,69 +132,76 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
-    backgroundColor: '#f3f4f6',
+    minHeight: '100vh',
+    width: '100vw',
+    padding: '40px 0',
   },
   card: {
-    width: '400px',
-    padding: '30px',
-    backgroundColor: '#ffffff',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    width: '420px',
+    padding: '40px',
+    backgroundColor: 'rgba(18, 24, 51, 0.65)',
+    backdropFilter: 'blur(16px)',
+    border: '1px solid var(--border-color)',
+    borderRadius: 'var(--border-radius-md)',
+    boxShadow: 'var(--shadow-lg)',
+    display: 'flex',
+    flexDirection: 'column',
   },
   title: {
-    margin: '0 0 20px 0',
-    color: '#1f2937',
+    margin: '0 0 5px 0',
+    color: 'var(--text-primary)',
     textAlign: 'center',
+    fontWeight: '800',
+    fontSize: '32px',
+    letterSpacing: '-1px',
+  },
+  subtitle: {
+    margin: '0 0 30px 0',
+    color: 'var(--text-secondary)',
+    textAlign: 'center',
+    fontWeight: '500',
+    fontSize: '16px',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '15px',
+    gap: '20px',
   },
   formGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '5px',
+    gap: '6px',
   },
   label: {
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#4b5563',
-  },
-  input: {
-    padding: '10px',
-    borderRadius: '4px',
-    border: '1px solid #d1d5db',
-    fontSize: '16px',
-  },
-  button: {
-    padding: '12px',
-    borderRadius: '4px',
-    border: 'none',
-    backgroundColor: '#10b981',
-    color: '#ffffff',
-    fontSize: '16px',
-    fontWeight: 'bold',
-    cursor: 'pointer',
+    fontSize: '12px',
+    fontWeight: '700',
+    color: 'var(--text-secondary)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.7px',
   },
   error: {
-    padding: '10px',
-    backgroundColor: '#fee2e2',
-    color: '#ef4444',
-    borderRadius: '4px',
-    marginBottom: '15px',
+    padding: '12px 16px',
+    backgroundColor: 'var(--danger-bg)',
+    border: '1px solid var(--danger-border)',
+    color: 'var(--danger-color)',
+    borderRadius: 'var(--border-radius-sm)',
+    marginBottom: '20px',
     fontSize: '14px',
+    fontWeight: '500',
   },
   footerText: {
-    marginTop: '15px',
+    marginTop: '25px',
     textAlign: 'center',
     fontSize: '14px',
-    color: '#6b7280',
+    color: 'var(--text-muted)',
   },
   link: {
-    color: '#10b981',
+    color: 'var(--accent-color)',
     textDecoration: 'none',
+    fontWeight: '600',
+    transition: 'color var(--transition-fast)',
   }
 };
 

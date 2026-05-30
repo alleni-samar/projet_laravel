@@ -1,13 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+  /* Color Palette */
+  --bg-primary: #0a0f24;
+  --bg-secondary: #121833;
+  --bg-tertiary: #1b2347;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-glow: rgba(59, 130, 246, 0.4);
+  
+  --accent-color: #a855f7;
+  --accent-hover: #9333ea;
+  
+  --success-color: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --success-border: rgba(16, 185, 129, 0.2);
+  
+  --danger-color: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.1);
+  --danger-border: rgba(239, 68, 68, 0.2);
+  
+  --warning-color: #f59e0b;
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --warning-border: rgba(245, 158, 11, 0.2);
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  
+  /* Shadows and Transitions */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.35);
+  
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --border-radius-sm: 8px;
+  --border-radius-md: 14px;
+  --border-radius-lg: 24px;
+}
+
+/* Base resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+  50% { box-shadow: 0 0 18px rgba(59, 130, 246, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Global classes */
+.animated {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.glow-btn:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Premium Form Styles */
+.form-input {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--border-radius-sm) !important;
+  padding: 12px !important;
+  font-size: 15px !important;
+  font-family: var(--font-family) !important;
+  transition: all var(--transition-fast) !important;
+  outline: none !important;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 10px var(--primary-glow) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.form-input-accent:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.submit-btn {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  padding: 12px !important;
+  border-radius: var(--border-radius-sm) !important;
+  border: none !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-hover) !important;
+  box-shadow: 0 0 15px var(--primary-glow) !important;
+  transform: translateY(-1px) !important;
+}
+
+.submit-btn-accent {
+  background-color: var(--accent-color) !important;
+  color: #ffffff !important;
+  padding: 12px !important;
+  border-radius: var(--border-radius-sm) !important;
+  border: none !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.submit-btn-accent:hover {
+  background-color: var(--accent-hover) !important;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
