@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\Users\samar\projets\reservation-vols-backend\phpunit.xml" tests="16" assertions="31" errors="0" failures="0" skipped="0" time="1.374661">
+    <testsuite name="Unit" tests="6" assertions="11" errors="0" failures="0" skipped="0" time="0.874632">
+      <testsuite name="Tests\Unit\ChatbotServiceTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ChatbotServiceTest.php" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.391320">
+        <testcase name="test_it_builds_system_prompt_with_context_data" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ChatbotServiceTest.php" line="12" class="Tests\Unit\ChatbotServiceTest" classname="Tests.Unit.ChatbotServiceTest" assertions="3" time="0.391320"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\ExampleTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.002166">
+        <testcase name="test_that_true_is_true" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ExampleTest.php" line="12" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" assertions="1" time="0.002166"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\FlightTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\FlightTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.394480">
+        <testcase name="test_scope_future_returns_only_flights_with_departure_after_now" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\FlightTest.php" line="14" class="Tests\Unit\FlightTest" classname="Tests.Unit.FlightTest" assertions="1" time="0.394480"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\ReservationServiceTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ReservationServiceTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.086666">
+        <testcase name="test_it_creates_reservation_and_decreases_available_seats" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ReservationServiceTest.php" line="24" class="Tests\Unit\ReservationServiceTest" classname="Tests.Unit.ReservationServiceTest" assertions="3" time="0.035966"/>
+        <testcase name="test_it_throws_exception_when_not_enough_seats" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ReservationServiceTest.php" line="41" class="Tests\Unit\ReservationServiceTest" classname="Tests.Unit.ReservationServiceTest" assertions="1" time="0.024247"/>
+        <testcase name="test_it_cancels_reservation_and_restores_seats" file="C:\Users\samar\projets\reservation-vols-backend\tests\Unit\ReservationServiceTest.php" line="51" class="Tests\Unit\ReservationServiceTest" classname="Tests.Unit.ReservationServiceTest" assertions="2" time="0.026454"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="10" assertions="20" errors="0" failures="0" skipped="0" time="0.500029">
+      <testsuite name="Tests\Feature\AdminFlightTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\AdminFlightTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="0" time="0.144523">
+        <testcase name="test_admin_can_create_a_flight" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\AdminFlightTest.php" line="25" class="Tests\Feature\AdminFlightTest" classname="Tests.Feature.AdminFlightTest" assertions="2" time="0.089158"/>
+        <testcase name="test_non_admin_cannot_create_flight" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\AdminFlightTest.php" line="43" class="Tests\Feature\AdminFlightTest" classname="Tests.Feature.AdminFlightTest" assertions="1" time="0.027036"/>
+        <testcase name="test_admin_can_delete_flight" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\AdminFlightTest.php" line="50" class="Tests\Feature\AdminFlightTest" classname="Tests.Feature.AdminFlightTest" assertions="2" time="0.028329"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ChatbotApiTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ChatbotApiTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.192314">
+        <testcase name="test_chatbot_returns_response_from_gemini_mock" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ChatbotApiTest.php" line="15" class="Tests\Feature\ChatbotApiTest" classname="Tests.Feature.ChatbotApiTest" assertions="3" time="0.082089"/>
+        <testcase name="test_chatbot_handles_gemini_api_failure" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ChatbotApiTest.php" line="36" class="Tests\Feature\ChatbotApiTest" classname="Tests.Feature.ChatbotApiTest" assertions="2" time="0.061248"/>
+        <testcase name="test_unauthenticated_user_cannot_use_chatbot" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ChatbotApiTest.php" line="52" class="Tests\Feature\ChatbotApiTest" classname="Tests.Feature.ChatbotApiTest" assertions="1" time="0.048977"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ExampleTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.066885">
+        <testcase name="test_the_application_returns_a_successful_response" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ExampleTest.php" line="13" class="Tests\Feature\ExampleTest" classname="Tests.Feature.ExampleTest" assertions="1" time="0.066885"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\FlightApiTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\FlightApiTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.029225">
+        <testcase name="test_user_can_search_flights_by_city" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\FlightApiTest.php" line="15" class="Tests\Feature\FlightApiTest" classname="Tests.Feature.FlightApiTest" assertions="4" time="0.029225"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ReservationTest" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ReservationTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.067081">
+        <testcase name="test_authenticated_user_can_book_a_flight" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ReservationTest.php" line="15" class="Tests\Feature\ReservationTest" classname="Tests.Feature.ReservationTest" assertions="3" time="0.034292"/>
+        <testcase name="test_unauthenticated_user_cannot_book" file="C:\Users\samar\projets\reservation-vols-backend\tests\Feature\ReservationTest.php" line="35" class="Tests\Feature\ReservationTest" classname="Tests.Feature.ReservationTest" assertions="1" time="0.032789"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

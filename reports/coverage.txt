@@ -1,0 +1,30 @@
+
+
+[1;37;40mCode Coverage Report:      [0m
+[1;37;40m  2026-05-31 14:16:12      [0m
+[1;37;40m                           [0m
+[1;37;40m Summary:                  [0m
+[37;41m  Classes: 15.38% (2/13)   [0m
+[37;41m  Methods: 30.77% (12/39)  [0m
+[37;41m  Lines:   38.53% (225/584)[0m
+
+App\Http\Controllers\API\ChatbotController
+  [37;41mMethods:  25.00% ( 1/ 4)[0m   [37;41mLines:  39.44% ( 28/ 71)[0m
+App\Http\Controllers\API\FlightController
+  [37;41mMethods:  20.00% ( 1/ 5)[0m   [37;41mLines:  43.75% ( 42/ 96)[0m
+App\Http\Controllers\API\ReservationController
+  [37;41mMethods:  25.00% ( 1/ 4)[0m   [37;41mLines:  32.08% ( 17/ 53)[0m
+App\Http\Middleware\CheckRole
+  [30;42mMethods: 100.00% ( 1/ 1)[0m   [30;42mLines: 100.00% (  6/  6)[0m
+App\Models\Flight
+  [37;41mMethods:  33.33% ( 1/ 3)[0m   [30;43mLines:  77.78% (  7/  9)[0m
+App\Models\Reservation
+  [30;43mMethods:  66.67% ( 2/ 3)[0m   [30;43mLines:  83.33% (  5/  6)[0m
+App\Models\User
+  [37;41mMethods:  50.00% ( 2/ 4)[0m   [30;43mLines:  71.43% (  5/  7)[0m
+App\Providers\AppServiceProvider
+  [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% (  2/  2)[0m
+App\Services\ChatbotService
+  [37;41mMethods:  25.00% ( 1/ 4)[0m   [37;41mLines:  48.82% ( 83/170)[0m
+App\Services\ReservationService
+  [37;41mMethods:   0.00% ( 0/ 2)[0m   [30;42mLines:  90.91% ( 30/ 33)[0m
