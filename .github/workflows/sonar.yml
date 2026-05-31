@@ -24,7 +24,7 @@ jobs:
           coverage: pcov
 
       - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
 
       - name: Prepare Environment
         run: |
